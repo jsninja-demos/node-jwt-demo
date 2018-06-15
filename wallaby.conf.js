@@ -8,7 +8,12 @@ const envString = Object.entries(env)
   .join(';');
 
 module.exports = () => ({
-  files: ['src/**/*.js', 'data/**/*.*', 'tests/__data/**/*.*'],
+  files: [
+    'src/**/*.js',
+    'data/**/*.*',
+    'tests/__data/**/*.*',
+    'tests/helpers/**/*.js',
+  ],
   tests,
   env: {
     type: 'node',

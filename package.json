@@ -13,7 +13,8 @@
     "test": {
       "command": "ava",
       "env": {
-        "JWT_connection": "./tests/__data"
+        "JWT_connection": "./tests/__data",
+        "JWT_secret": "TEST"
       }
     }
   },
@@ -38,11 +39,14 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^8.3.0",
     "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.1",
     "koa-jwt": "^3.3.2",
     "koa-router": "^7.4.0",
     "lodash": "^4.17.10",
-    "rc": "^1.2.8"
+    "rc": "^1.2.8",
+    "uuid": "^3.2.1"
   },
   "eslintConfig": {
     "extends": [
@@ -60,7 +64,8 @@
   "ava": {
     "files": [
       "tests/**/*.js",
-      "!tests/__data/**/*.js"
+      "!tests/__data/**/*.js",
+      "!tests/helpers/**/*.js"
     ],
     "babel": false,
     "compileEnhancements": false
