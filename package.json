@@ -1,0 +1,68 @@
+{
+  "name": "jsninja-jwt-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "better-npm-run test",
+    "lint": "eslint src tests",
+    "precommit": "lint-staged"
+  },
+  "betterScripts": {
+    "test": {
+      "command": "ava",
+      "env": {
+        "JWT_connection": "./tests/__data"
+      }
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ]
+  },
+  "keywords": [],
+  "author": "Illya Klymov <illya@javascript.ninja",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^1.0.0-beta.5.1",
+    "better-npm-run": "^0.1.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.12.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
+    "supertest-koa-agent": "^0.3.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "koa": "^2.5.1",
+    "koa-jwt": "^3.3.2",
+    "koa-router": "^7.4.0",
+    "lodash": "^4.17.10",
+    "rc": "^1.2.8"
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ],
+    "env": {
+      "node": true
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": true
+  },
+  "ava": {
+    "files": [
+      "tests/**/*.js",
+      "!tests/__data/**/*.js"
+    ],
+    "babel": false,
+    "compileEnhancements": false
+  }
+}
