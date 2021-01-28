@@ -59,7 +59,7 @@
   },
   "prettier": {
     "singleQuote": true,
-    "trailingComma": true
+    "trailingComma": "all"
   },
   "ava": {
     "files": [
